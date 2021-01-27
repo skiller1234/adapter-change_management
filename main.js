@@ -157,19 +157,23 @@ function post(serviceNowTable, callback) {
 
 }
 
-// This test function calls your request and logs any errors.
+/*
+ * This section is used to test your project.
+ * We will test both get() and post() functions.
+ * If either function returns data, print the returned data to console on STDOUT.
+ * If either function returns an error, print the returned data to the console on STDERR.
+ */
 function main() {
-  // Call function get().
-  // We are passing a static argument for parameter serviceNowTable.
-  // We are passing an anonymous function argument, a data-first callback,
-  // for parameter callback.
   get('change_request', (data, error) => {
     if (error) {
       console.error(`\nError returned from GET request:\n${JSON.stringify(error)}`);
     }
     console.log(`\nResponse returned from GET request:\n${JSON.stringify(data)}`)
   });
+  post('change_request', (data, error) => {
+    if (error) {
+      console.error(`\nError returned from POST request:\n${JSON.stringify(error)}`);
+    }
+    console.log(`\nResponse returned from POST request:\n${JSON.stringify(data)}`)
+  });
 }
-
-// Call main to run it.
-main();
