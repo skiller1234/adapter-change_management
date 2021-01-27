@@ -177,3 +177,6 @@ function main() {
     console.log(`\nResponse returned from POST request:\n${JSON.stringify(data)}`)
   });
 }
+
+// Call main to run it.
+main();
